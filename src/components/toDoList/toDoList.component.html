@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<section>
+  <header>
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Place your ToDo Here">
+    </md-input-container>
+    <button md-raised-button>Add</button>
+  </header>
+  <to-do-item *ngFor="let task of tasksList " [currentTask]="task"></to-do-item>
+</section>
+
