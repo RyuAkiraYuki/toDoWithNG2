@@ -1,0 +1,13 @@
+md-card.to-do-list {
+  width: 500px;
+  margin: 0 auto;
+}
+
+md-card.to-do-list button[md-raised-button] {
+  margin-top: 13px;
+  margin-bottom: 17px;
+}
+
+md-card.to-do-list md-input-container.mat-input-container {
+  width: 81.5%;
+}

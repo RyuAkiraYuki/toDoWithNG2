@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
 
-declare interface ITaskItem {
-  Name: string;
-  isDone: boolean;
+import * as _ from "lodash";
 
+declare interface ITaskItem {
+  id: number;
+  name: string;
+  isDone: boolean;
 }
 
 @Component({
@@ -13,40 +15,48 @@ declare interface ITaskItem {
 })
 export class ToDoListComponent {
   private tasksList: ITaskItem[] = [];
-  private newTask: string;
+  private newTaskTitle: string;
 
   constructor() {
 
-    this.newTask = '';
+    this.newTaskTitle = '';
 
     this.tasksList.push({
-      Name: 'Create To Do App with Angualr 1',
+      id: 0,
+      name: 'Create To Do App with Angualr 1',
       isDone: true
     });
     this.tasksList.push({
-      Name: 'Implement MVC pattern with Python',
+      id: 1,
+      name: 'Implement MVC pattern with Python',
       isDone: false
     });
 
     this.tasksList.push({
-      Name: 'Implement MVC pattern with Node.js',
+      id: 2,
+      name: 'Implement MVC pattern with Node.js',
       isDone: false
     });
   }
 
   public addTask() {
-    if (this.newTask && this.newTask.length > 0) {
+    if (this.newTaskTitle && this.newTaskTitle.length > 0) {
+
       this.tasksList.push({
-        Name: this.newTask,
+        id: this.tasksList.length,
+        name: this.newTaskTitle,
         isDone: false
       });
 
-      this.newTask = '';
+      this.newTaskTitle = '';
     }
   }
 
-  public removeTask() {
-
+  public removeTask(taskId: number) {
+    console.log(taskId)
+    _.remove(this.tasksList, (task) => {
+      return task.id != taskId;
+    });
   }
 
 }

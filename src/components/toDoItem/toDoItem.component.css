@@ -1,0 +1,18 @@
+.task-item {
+  padding-bottom: 19px;
+  border-bottom: ridge 3px gray;
+  padding-top: 7px;
+  width: 100%;
+}
+
+.task-item .task-title {
+  display: inline-block;
+  width: 300px;
+}
+
+
+.task-item .task-actions {
+  display: inline-block;
+  position: absolute;
+  right: 24px;
+}

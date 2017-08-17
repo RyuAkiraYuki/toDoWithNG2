@@ -1,12 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<md-card>
-  <md-card-header>
-    <md-input-container class="example-full-width">
-      <input #textbox mdInput [(ngModel)]="newTask" placeholder="Place your ToDo Here">
-    </md-input-container>
-    <button md-raised-button (click)="addTask()"> Add</button>
-  </md-card-header>
+<md-card class="to-do-list">
+
   <md-card-content>
+    <section>
+      <md-input-container>
+        <input #textbox mdInput [(ngModel)]="newTaskTitle" placeholder="Place your ToDo Here">
+      </md-input-container>
+      <button md-raised-button (click)="addTask()">Add</button>
+    </section>
+
     <to-do-item *ngFor="let task of tasksList " [currentTask]="task"></to-do-item>
   </md-card-content>
 </md-card>

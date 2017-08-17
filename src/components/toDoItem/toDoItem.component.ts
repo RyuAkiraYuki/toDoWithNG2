@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MdIconRegistry} from '@angular/material';
 
@@ -11,7 +11,15 @@ import {MdIconRegistry} from '@angular/material';
 export class ToDoItemComponent {
   @Input() currentTask;
 
+  @Output()
+  removed: EventEmitter<number> = new EventEmitter();
+
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('closeIcon', sanitizer.bypassSecurityTrustResourceUrl('./img/cancel.svg'));
+    iconRegistry.addSvgIcon('closeIcon', sanitizer.bypassSecurityTrustResourceUrl('./../img/cancel.svg'));
   }
+
+  public removeTask(taskId: number) {
+    this.removed.emit(taskId);
+  }
+
 }
