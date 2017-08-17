@@ -10,10 +10,11 @@ import {ToDoListModule} from '../components/toDoList/toDoList.module';
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, ToDoListModule
+    BrowserModule, BrowserAnimationsModule, ToDoListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }
