@@ -7,7 +7,27 @@ md-card.to-do-list button[md-raised-button] {
   margin-top: 13px;
   margin-bottom: 17px;
 }
-
+md-card.to-do-list .mat-card-content {
+  margin-bottom: 31px;
+}
 md-card.to-do-list md-input-container.mat-input-container {
   width: 81.5%;
+}
+
+md-card.to-do-list md-card-footer {
+  margin-top: 7px;
+  border-top: 2px groove #cfcfcf;
+}
+
+md-card.to-do-list md-card-footer .statistics {
+  padding: 9px 24px;
+}
+
+md-card.to-do-list md-card-footer .statistics > .item {
+  display: inline-block;
+  width: 49%;
+}
+
+md-card.to-do-list md-card-footer .statistics > .item * {
+  display: inline-block;
 }

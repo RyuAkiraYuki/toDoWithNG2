@@ -1,13 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="task-item">
   <div class="task-title">
-    <md-checkbox class="example-margin" [(checked)]="currentTask.isDone">{{currentTask.name}}
+    <md-checkbox class="example-margin" [(checked)]="currentTask.isDone" (click)="taskStatusUpdate(currentTask)">{{currentTask.name}}
     </md-checkbox>
   </div>
   <div class="task-actions">
-    <button md-raised-button (click)="removeTask()">Remove</button>
+    <button md-raised-button (click)="removeTask(currentTask)">Remove</button>
   </div>
-
-
 </section>
 
