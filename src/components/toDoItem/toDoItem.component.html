@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="task-item">
   <div class="task-title">
-    <md-checkbox class="example-margin" [(checked)]="currentTask.isDone" (click)="taskStatusUpdate(currentTask)">{{currentTask.name}}
+    <md-checkbox class="example-margin" [(checked)]="listOfTasks[currentTaskIndex].isDone" (click)="taskStatusUpdate()">{{listOfTasks[currentTaskIndex].name}}
     </md-checkbox>
   </div>
   <div class="task-actions">
