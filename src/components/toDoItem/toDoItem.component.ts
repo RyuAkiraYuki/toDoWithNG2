@@ -13,18 +13,13 @@ export class ToDoItemComponent {
   @Input() currentTaskIndex;
   @Input() listOfTasks;
 
+  @Output() listOfTasksChange: EventEmitter<ITaskItem> = new EventEmitter<ITaskItem>();
+
   @Output()
   removed: EventEmitter<ITaskItem> = new EventEmitter<ITaskItem>();
 
   @Output()
   taskStatusChange: EventEmitter<ITaskItem> = new EventEmitter<ITaskItem>();
-
-
-
-  @Input()
-  task:ITaskItem;
-  @Output()
-  taskChange: EventEmitter<ITaskItem> = new EventEmitter<ITaskItem>();
 
 
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
@@ -33,13 +28,12 @@ export class ToDoItemComponent {
 
   public removeTask(task: ITaskItem) {
     this.removed.emit(task);
-    debugger;
   }
 
 
-  public taskStatusUpdate() {
-    this.taskChange.emit(this.task);
-    debugger;
+  public taskStatusUpdate(newValue) {
+    this.listOfTasks[this.currentTaskIndex].isDone = newValue
+    this.listOfTasksChange.emit(this.listOfTasks);
   }
 
 }

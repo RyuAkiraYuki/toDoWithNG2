@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="task-item">
   <div class="task-title">
-    <md-checkbox class="example-margin" [(checked)]="listOfTasks[currentTaskIndex].isDone" (click)="taskStatusUpdate()">{{listOfTasks[currentTaskIndex].name}}
+    <md-checkbox class="example-margin" [ngModel]="listOfTasks[currentTaskIndex].isDone" (ngModelChange)="taskStatusUpdate($event)">{{listOfTasks[currentTaskIndex].name}}
     </md-checkbox>
   </div>
   <div class="task-actions">
-    <button md-raised-button (click)="removeTask(currentTask)">Remove</button>
+    <button md-raised-button (click)="removeTask(listOfTasks[currentTaskIndex])">Remove</button>
   </div>
 </section>
 

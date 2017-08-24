@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, DoCheck} from '@angular/core';
 import {ViewModelController} from '../viewModelController/viewModel.component'
 
 @Component({
@@ -6,7 +6,8 @@ import {ViewModelController} from '../viewModelController/viewModel.component'
   templateUrl: './toDoList.component.html',
   styleUrls: ['./toDoList.component.css']
 })
-export class ToDoListComponent {
+
+export class ToDoListComponent implements DoCheck {
   // private tasksList: ITaskItem[] = [];
   private tasksList: ViewModelController;
   private newTaskTitle: string;
@@ -51,7 +52,7 @@ export class ToDoListComponent {
     this.tasksList.remove(currentTask);
   }
 
-  public taskUpdate() {
+  ngDoCheck() {
     this.tasksList.updateStatusCount();
   }
 
